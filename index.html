@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周强 — 三亚学院社会治理学院教授</title>
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --bg-paper: #FAFAF7;
+  --bg-white: #FFFFFF;
+  --bg-dark: #1A1A1A;
+  --text-primary: #1A1A1A;
+  --text-secondary: #444444;
+  --text-muted: #5C5C5C;
+  --border-subtle: #E5E2D7;
+  --border-photo: #CFC9B8;
+  --accent: #1D4F91;
+  --accent-button-text: #FFFFFF;
+  --footer-text: #444444;
+  --photo-bg: #E5E2D7;
+  --columbia-blue: #B9D9EB;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Canvas Container ===== */
+.canvas {
+  width: 1440px;
+  background: var(--bg-paper);
+  transform-origin: top center;
+  min-height: 3261px;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: var(--columbia-blue);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.site-title {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--accent);
+}
+
+/* ===== Hero ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 80px 80px;
+  gap: 32px;
+  background: var(--bg-paper);
+}
+
+.photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  border: 2px solid var(--border-photo);
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.hero-name {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.hero-bio {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 640px;
+  line-height: 28px;
+}
+
+/* ===== Section Common ===== */
+.section { padding: 80px; }
+.section-white { background: var(--bg-white); }
+.section-paper { background: var(--bg-paper); }
+.section-border { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-top {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.back-top:hover { opacity: 0.6; }
+
+.section-heading {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.back-top:hover { opacity: 0.6; }
+
+/* ===== About ===== */
+.about-section { display: flex; flex-direction: column; gap: 48px; }
+
+.about-grid {
+  display: flex;
+  gap: 80px;
+}
+
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-body {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 28px;
+}
+
+.about-right {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.edu-body {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 22px;
+  white-space: pre-line;
+}
+
+/* ===== CV ===== */
+.cv-section { display: flex; flex-direction: column; gap: 32px; }
+
+.cv-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  gap: 40px;
+}
+
+.cv-info { display: flex; flex-direction: column; gap: 8px; }
+
+.cv-title {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cv-desc {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.cv-btn {
+  padding: 12px 28px;
+  background: var(--accent);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-button-text);
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.cv-btn:hover { opacity: 0.9; }
+
+/* ===== Publications ===== */
+.pub-section { display: flex; flex-direction: column; gap: 32px; }
+
+.pub-list { display: flex; flex-direction: column; }
+
+.pub-item {
+  display: flex;
+  padding: 24px 0;
+  gap: 24px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pub-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.pub-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pub-title {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 24px;
+}
+
+.pub-meta {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.pub-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-photo);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.pub-btn:hover { background: var(--border-subtle); }
+
+/* ===== News ===== */
+.news-section { display: flex; flex-direction: column; gap: 32px; }
+
+.news-list { display: flex; flex-direction: column; }
+
+.news-item {
+  display: flex;
+  padding: 20px 0;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.news-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.news-content {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 24px;
+  flex: 1;
+}
+
+/* ===== Contact ===== */
+.contact-section { display: flex; flex-direction: column; gap: 32px; }
+
+.contact-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.contact-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.contact-value {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 22px;
+  white-space: pre-line;
+}
+
+/* ===== Footer ===== */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 80px;
+  gap: 24px;
+  background: var(--columbia-blue);
+}
+
+.footer-name {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.footer-copy {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="canvas" id="canvas">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="site-title">周强</div>
+    <nav class="nav">
+      <a href="#about">关于</a>
+      <a href="#cv">简历</a>
+      <a href="#publications">论文</a>
+      <a href="#news">动态</a>
+      <a href="#contact" class="active">联系</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="photo">
+      <img src="assets/portrait.jpg" alt="周强教授">
+    </div>
+    <h1 class="hero-name">周强</h1>
+    <p class="hero-title">三亚学院社会治理学院教授</p>
+    <p class="hero-subtitle">哥伦比亚大学政治学博士 &middot; 北京大学政治学与经济学双学士</p>
+    <p class="hero-bio">以国际政治经济学（IPE）与比较政治学为领域，以形式模型与跨国比较为方法，研究全球化如何重塑国内政治——从分配效应与补偿政治，到经济危机与政体变革，再到海南自贸港的压缩型制度试验。</p>
+  </section>
+
+  <!-- About -->
+  <section class="section section-white section-border about-section" id="about">
+    <div class="label-row">
+      <span class="section-label">关于</span>
+      <a href="#top" class="back-top">↑ 回到上方</a>
+    </div>
+    <div class="about-grid">
+      <div class="about-left">
+        <h2 class="section-heading">学术履历</h2>
+        <p class="about-body">周强，三亚学院社会治理学院教授。哥伦比亚大学政治学博士，北京大学政治学与经济学双学士。曾任教于北京大学、上海财经大学、芝加哥大学。<br><br>以国际政治经济学（IPE）与比较政治学为领域，以形式模型与跨国比较为方法，我的研究围绕一条核心线索展开：全球化如何重塑国内政治。在分配效应层面，关注补偿政治与逆全球化的制度根源；在政体变革层面，追踪经济危机从触发民主化到拆解威权精英联盟的条件性机制；在制度回应层面，以海南自贸港为田野，考察压缩型发展如何以制度杠杆撬动全球化压力下的地方治理转型。</p>
+      </div>
+      <div class="about-right">
+        <div class="edu-item">
+          <span class="edu-label">博士学位</span>
+          <span class="edu-body">哥伦比亚大学
+政治学博士</span>
+        </div>
+        <div class="edu-item">
+          <span class="edu-label">学士学位</span>
+          <span class="edu-body">北京大学
+政治学与经济学双学士</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="section section-paper cv-section" id="cv">
+    <div class="label-row">
+      <span class="section-label">简历</span>
+      <a href="#top" class="back-top">↑ 回到上方</a>
+    </div>
+    <div class="cv-card">
+      <div class="cv-info">
+        <div class="cv-title">个人简历</div>
+        <div class="cv-desc">包含完整学术经历、发表成果、教学记录与学术服务</div>
+      </div>
+      <a href="assets/周强_教授学术简历.pdf" class="cv-btn">下载简历</a>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="section section-white section-border pub-section" id="publications">
+    <div class="label-row">
+      <span class="section-label">论文</span>
+      <a href="#top" class="back-top">↑ 回到上方</a>
+    </div>
+    <h2 class="section-heading">论文与著作</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div class="pub-info">
+          <div class="pub-title">经济危机与周期性政治重组</div>
+          <div class="pub-meta">周强、蒋光明.《世界经济与政治》, 2021年第9期</div>
+        </div>
+        <a href="assets/pubs/周强蒋光明-世界经济与政治-2021.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div class="pub-info">
+          <div class="pub-title">拯救全球化——劳动力组织如何实现充分补偿</div>
+          <div class="pub-meta">周强、王宇澄.《世界经济与政治论坛》, 2021年第3期</div>
+        </div>
+        <a href="assets/pubs/周强王宇澄-2021.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div class="pub-info">
+          <div class="pub-title">资产专用性会如何影响政治态度和社会稳定？——理论机制与实证检验</div>
+          <div class="pub-meta">周强、周英慧.《北大政治学评论》, 第8辑</div>
+        </div>
+        <a href="assets/pubs/资产专用性会如何影响政治态度和社会稳定-周强周英慧-2021.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2019</span>
+        <div class="pub-info">
+          <div class="pub-title">经济危机、政治重组与西方民粹主义——基于国内政治联盟的形式模型与经验检验</div>
+          <div class="pub-meta">周强、陈兆源.《世界经济与政治》, 2019年</div>
+        </div>
+        <a href="assets/pubs/周强陈兆源-世界经济与政治-2019.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div class="pub-info">
+          <div class="pub-title">补偿何时能换来对全球化的支持——嵌入式自由主义、劳动力流动性与开放经济</div>
+          <div class="pub-meta">周强.《世界经济与政治》, 2018年第10期</div>
+        </div>
+        <a href="assets/pubs/周强-世界经济与政治2018.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div class="pub-info">
+          <div class="pub-title">逆全球化压力下国家反应的异同——从政治制度角度的分析</div>
+          <div class="pub-meta">周强.《教学与研究》, 2018年第10期</div>
+        </div>
+        <a href="assets/pubs/周强-教学与研究2018.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2017</span>
+        <div class="pub-info">
+          <div class="pub-title">Contingent Democratization: When Do Economic Crises Matter?</div>
+          <div class="pub-meta">Tang, Min, Narisong Huhe, and Qiang Zhou. British Journal of Political Science, 47(3)</div>
+        </div>
+        <a href="assets/pubs/Qiang_Zhou_2017_bjps.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2017</span>
+        <div class="pub-info">
+          <div class="pub-title">Endogenizing Labor Mobility: A Partisan Politics Explanation</div>
+          <div class="pub-meta">Zhou, Qiang. International Interactions, 43(4), pp. 688–715</div>
+        </div>
+        <a href="assets/pubs/Qiang_Zhou_2017_ii.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2016</span>
+        <div class="pub-info">
+          <div class="pub-title">The Political Roots of Interindustry Labor Mobility: Partisanship, Union Centralization and Mobility</div>
+          <div class="pub-meta">Zhou, Qiang. 专著</div>
+        </div>
+        <a href="assets/pubs/Partisanship Union Centralization and Mobility_Qiang_Zhou_2016.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2014</span>
+        <div class="pub-info">
+          <div class="pub-title">公共管理中的规范研究探析</div>
+          <div class="pub-meta">周强.《探索与争鸣》, 2014年第2期</div>
+        </div>
+        <a href="assets/pubs/周强_2014_cpaj.pdf" class="pub-btn">PDF</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2014</span>
+        <div class="pub-info">
+          <div class="pub-title">中式经济模式及其对科技创新的启示</div>
+          <div class="pub-meta">周强.《上海交通大学学报（哲学社会科学版）》, 2014年第1期</div>
+        </div>
+        <a href="assets/pubs/周强_2014_jsjtu.pdf" class="pub-btn">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section section-paper news-section" id="news">
+    <div class="label-row">
+      <span class="section-label">动态</span>
+      <a href="#top" class="back-top">↑ 回到上方</a>
+    </div>
+    <h2 class="section-heading">近期动态</h2>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">2026.07</span>
+        <span class="news-content">《经济危机与威权—资本联盟的周期性重组——基于泰国三十年政治循环（1997—2025）的分析》（合著）已投稿《南洋问题研究》</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.07</span>
+        <span class="news-content">《几眼还一眼？——非对称Tit-for-Tat博弈与东盟对华交往偏好曲线》已投稿《东南亚研究》</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.06</span>
+        <span class="news-content">《富国未必强兵：大宗商品价格波动与军费支出的跨国研究》（合著）已投稿《世界经济与政治》</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-white section-border contact-section" id="contact">
+    <div class="label-row">
+      <span class="section-label">联系</span>
+      <a href="#top" class="back-top">↑ 回到上方</a>
+    </div>
+    <h2 class="section-heading">联系方式</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">邮箱</span>
+        <span class="contact-value">qiangzhou@sanyau.edu.cn<br>jeanjoe@vip.163.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">办公地址</span>
+        <span class="contact-value">海南省三亚市吉阳区学院路191号
+三亚学院社会治理学院 明B408</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">电话</span>
+        <span class="contact-value">17888837915</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-name">周强</div>
+    <div class="footer-copy">&copy; 2026 周强 &middot; 三亚学院社会治理学院</div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('canvas');
+  const DESIGN_WIDTH = 1440;
+
+  function scalePage() {
+    const scale = Math.min(window.innerWidth / DESIGN_WIDTH, 1);
+    canvas.style.transform = 'scale(' + scale + ')';
+    canvas.style.marginTop = '0';
+  }
+
+  scalePage();
+  window.addEventListener('resize', scalePage);
+
+  // Smooth scroll for back-to-top links
+  document.querySelectorAll('a[href="#top"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
