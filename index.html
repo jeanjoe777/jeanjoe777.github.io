@@ -246,6 +246,60 @@ body {
   white-space: pre-line;
 }
 
+/* ===== Experience ===== */
+.exp-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.exp-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.exp-list { display: flex; flex-direction: column; }
+
+.exp-item {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.exp-item:last-child { border-bottom: none; }
+
+.exp-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  width: 170px;
+  flex-shrink: 0;
+}
+
+.exp-org {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.exp-role {
+  font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+  flex: 1;
+}
+
 /* ===== CV ===== */
 .cv-section { display: flex; flex-direction: column; gap: 32px; }
 
@@ -467,7 +521,7 @@ body {
     <h1 class="hero-name">周强</h1>
     <p class="hero-title">三亚学院社会治理学院教授</p>
     <p class="hero-subtitle">哥伦比亚大学政治学博士 &middot; 北京大学政治学与经济学双学士</p>
-    <p class="hero-bio">以国际政治经济学（IPE）与比较政治学为主要研究领域，以形式模型与跨国比较为方法，研究全球化如何与国内政治双向重塑——从分配效应到补偿政治，从经济冲击到政体变革，再到海南自贸港的压缩型制度试验。</p>
+    <p class="hero-bio">研究规则的生成与改写，尤其关注次中心行为者如何在不对称格局中以小博大。</p>
     <a class="hero-url" href="https://jeanjoe777.github.io">个人网页链接：jeanjoe777.github.io</a>
   </section>
 
@@ -480,7 +534,7 @@ body {
     <div class="about-grid">
       <div class="about-left">
         <h2 class="section-heading">学术履历</h2>
-        <p class="about-body">周强，三亚学院社会治理学院教授。哥伦比亚大学政治学博士，北京大学政治学与经济学双学士。曾任教于北京大学、上海财经大学、芝加哥大学。<br><br>以国际政治经济学（IPE）与比较政治学为主要研究领域，以形式模型与跨国比较为方法，本人的研究围绕全球化如何与国内政治双向重塑这一核心线索展开。在分配效应层面，关注补偿政治与逆全球化的制度根源；在政体变革层面，追踪经济冲击从触发民主化到拆解威权精英联盟的条件性机制；在制度回应层面，以海南自贸港为田野，考察压缩型发展如何以制度杠杆撬动全球化压力下的地方治理转型。</p>
+        <p class="about-body">周强，三亚学院社会治理学院教授，公共管理方向学术带头人，MPA 硕士点建设负责人，海南省高层次人才。哥伦比亚大学政治学博士，导师 Helen V. Milner；北京大学政治学与经济学双学士。先后在普林斯顿大学、芝加哥大学、上海财经大学与北京大学从事研究与教学。<br><br>他的研究追问一个共同的问题：如果规则由强者书写，处于次中心位置的国家与行为者，如何参与规则的制定与改写。这一追问分成三条线索。分配层面，考察经济开放的受损者何时得到补偿、补偿何时转化为对开放的支持；政体层面，追踪经济危机如何拆解或强化精英联盟，从而决定政权的韧性与转型；制度层面，以海南自贸港为制度试验场，观察压缩型制度变迁中能力如何从借用外部规则走向自持。<br><br>以形式模型与跨国比较为主要方法，兼做长时段案例追踪。文章见于《世界经济与政治》《中国行政管理》与 British Journal of Political Science、International Interactions 等刊，出版英文专著一部，主持国家社科基金等省部级以上课题五项。</p>
       </div>
       <div class="about-right">
         <div class="edu-item">
@@ -492,6 +546,41 @@ body {
           <span class="edu-label">学士学位</span>
           <span class="edu-body">北京大学
 政治学与经济学双学士</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-block">
+      <div class="exp-heading">职业经历</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <span class="exp-year">2025.05 – 至今</span>
+          <span class="exp-org">三亚学院</span>
+          <span class="exp-role">教授，公共管理方向学术带头人</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">2021.07 – 2025.04</span>
+          <span class="exp-org">北京中公教育集团</span>
+          <span class="exp-role">高级研发顾问、研究院院长</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">2014.09 – 2021.07</span>
+          <span class="exp-org">北京大学</span>
+          <span class="exp-role">研究员，政府管理学院／中国国情研究中心</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">2012.02 – 2014.07</span>
+          <span class="exp-org">上海财经大学</span>
+          <span class="exp-role">助理教授，公共经济与管理学院</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">2008.10 – 2011.12</span>
+          <span class="exp-org">芝加哥大学</span>
+          <span class="exp-role">博士后讲师，国际关系委员会</span>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">2007.01 – 2008.10</span>
+          <span class="exp-org">普林斯顿大学</span>
+          <span class="exp-role">研究助理，伍德罗·威尔逊公共与国际事务学院</span>
         </div>
       </div>
     </div>
@@ -524,7 +613,7 @@ body {
         <span class="pub-year">2021</span>
         <div class="pub-info">
           <div class="pub-title">经济危机与周期性政治重组</div>
-          <div class="pub-meta">周强、蒋光明.《世界经济与政治》, 2021年第9期</div>
+          <div class="pub-meta">周强、蒋光明.《世界经济与政治》, 2021年第9期, 第59–83页</div>
         </div>
         <a href="assets/pubs/周强蒋光明-世界经济与政治-2021.pdf" class="pub-btn">PDF</a>
       </div>
@@ -532,7 +621,7 @@ body {
         <span class="pub-year">2021</span>
         <div class="pub-info">
           <div class="pub-title">拯救全球化——劳动力组织如何实现充分补偿</div>
-          <div class="pub-meta">周强、王宇澄.《世界经济与政治论坛》, 2021年第3期</div>
+          <div class="pub-meta">周强、王宇澄.《世界经济与政治论坛》, 2021年第3期, 第142–167页</div>
         </div>
         <a href="assets/pubs/周强王宇澄-2021.pdf" class="pub-btn">PDF</a>
       </div>
@@ -548,7 +637,7 @@ body {
         <span class="pub-year">2019</span>
         <div class="pub-info">
           <div class="pub-title">经济危机、政治重组与西方民粹主义——基于国内政治联盟的形式模型与经验检验</div>
-          <div class="pub-meta">周强、陈兆源.《世界经济与政治》, 2019年</div>
+          <div class="pub-meta">周强、陈兆源.《世界经济与政治》, 2019年第11期, 第78–104页</div>
         </div>
         <a href="assets/pubs/周强陈兆源-世界经济与政治-2019.pdf" class="pub-btn">PDF</a>
       </div>
@@ -556,7 +645,7 @@ body {
         <span class="pub-year">2018</span>
         <div class="pub-info">
           <div class="pub-title">补偿何时能换来对全球化的支持——嵌入式自由主义、劳动力流动性与开放经济</div>
-          <div class="pub-meta">周强.《世界经济与政治》, 2018年第10期</div>
+          <div class="pub-meta">周强.《世界经济与政治》, 2018年第10期, 第129–155页</div>
         </div>
         <a href="assets/pubs/周强-世界经济与政治2018.pdf" class="pub-btn">PDF</a>
       </div>
@@ -572,7 +661,7 @@ body {
         <span class="pub-year">2018</span>
         <div class="pub-info">
           <div class="pub-title">逆全球化压力下国家反应的异同——从政治制度角度的分析</div>
-          <div class="pub-meta">周强.《教学与研究》, 2018年第10期</div>
+          <div class="pub-meta">周强.《教学与研究》, 2018年第10期, 第55–63页</div>
         </div>
         <a href="assets/pubs/周强-教学与研究2018.pdf" class="pub-btn">PDF</a>
       </div>
@@ -580,7 +669,7 @@ body {
         <span class="pub-year">2017</span>
         <div class="pub-info">
           <div class="pub-title">Contingent Democratization: When Do Economic Crises Matter?</div>
-          <div class="pub-meta">Tang, Min, Narisong Huhe, and Qiang Zhou. British Journal of Political Science, 47(3)</div>
+          <div class="pub-meta">Tang, Min, Narisong Huhe, and Qiang Zhou. British Journal of Political Science, 47(1), pp. 71–90</div>
         </div>
         <a href="assets/pubs/Qiang_Zhou_2017_bjps.pdf" class="pub-btn">PDF</a>
       </div>
@@ -604,7 +693,7 @@ body {
         <span class="pub-year">2014</span>
         <div class="pub-info">
           <div class="pub-title">公共管理中的规范研究探析</div>
-          <div class="pub-meta">周强.《中国行政管理》, 2014年第2期</div>
+          <div class="pub-meta">周强.《中国行政管理》, 2014年第2期, 第74–78页</div>
         </div>
         <a href="assets/pubs/周强_2014_cpaj.pdf" class="pub-btn">PDF</a>
       </div>
@@ -612,7 +701,7 @@ body {
         <span class="pub-year">2014</span>
         <div class="pub-info">
           <div class="pub-title">中式经济模式及其对科技创新的启示</div>
-          <div class="pub-meta">周强.《上海交通大学学报（哲学社会科学版）》, 2014年第1期</div>
+          <div class="pub-meta">周强.《上海交通大学学报（哲学社会科学版）》, 2014年第1期, 第45–54页</div>
         </div>
         <a href="assets/pubs/周强_2014_jsjtu.pdf" class="pub-btn">PDF</a>
       </div>
@@ -628,12 +717,12 @@ body {
     <h2 class="section-heading">近期动态</h2>
     <div class="news-list">
       <div class="news-item">
-        <span class="news-date">2026.08</span>
-        <span class="news-content">《经济危机与威权—资本联盟的周期性重组——以泰国近三十年政治循环为例》已投稿《世界经济与政治》</span>
+        <span class="news-date">2026.11</span>
+        <span class="news-content">《从借用到拥有：压缩型制度变迁中的能力归属》工作论文，以海南自贸港的制度创新实践为案例</span>
       </div>
       <div class="news-item">
-        <span class="news-date">2026.07</span>
-        <span class="news-content">《几眼还一眼？——非对称Tit-for-Tat博弈与东盟对华交往偏好曲线》已投稿《东南亚研究》</span>
+        <span class="news-date">2026.09</span>
+        <span class="news-content">《经济危机与威权—资本联盟的周期性重组——以泰国近三十年政治循环为例》投稿《国际政治科学》，审稿中</span>
       </div>
       <div class="news-item">
         <span class="news-date">2026.06</span>
@@ -657,7 +746,7 @@ body {
       <div class="contact-item">
         <span class="contact-label">办公地址</span>
         <span class="contact-value">海南省三亚市吉阳区学院路191号
-三亚学院社会治理学院 明B408</span>
+三亚学院社会治理学院 书明楼B座408室</span>
       </div>
       <div class="contact-item">
         <span class="contact-label">电话</span>
